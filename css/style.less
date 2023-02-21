@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+html *,
+html ::after,
+html ::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin          : 0;
+  background-color: #fff;
+}
+
+img {
+  max-width: 100%;
+}
+
+p,
+h1,
+h2 {
+  margin : 0;
+  padding: 0;
+}
+
+a {
+  background-color: transparent;
+  text-decoration : none;
+}
+
+.home-wrapper {
+  max-width : 1170px;
+  min-width : 320px;
+  width     : 100%;
+  min-height: 100vh;
+  margin    : 0 auto;
+
+  display    : grid;
+  align-items: center;
+
+  font-family: 'Cairo', sans-serif;
+  font-size  : 16px;
+  color      : black;
+
+
+  background-color: white;
+  overflow        : hidden;
+}
+
+.m-btn {
+  max-width: 150px;
+  width    : 100%;
+  margin   : 0 auto;
+  padding  : 15px 0;
+
+  display: block;
+
+  font-size     : 18px;
+  text-transform: uppercase;
+  color         : black;
+  text-align    : center;
+
+  border    : 3px solid #333333;
+  background: #f1f1f1;
+  cursor    : pointer;
+
+  transition: all 150ms ease-out;
+  transform : translateY(0px);
+
+  &:hover {
+
+    box-shadow: 9px 9px 0px 0px rgba(249, 235, 167, 1);
+  }
+
+}
+
+.m-modal {
+  display : none;
+  position: fixed;
+  width   : 100%;
+  height  : 100%;
+  z-index : 100;
+  top     : 0;
+  left    : 0;
+}
+
+.m-modal__bg {
+  width     : 100%;
+  height    : 100%;
+  background: rgba(0, 0, 0, .7);
+}
+
+
+
+.m-modal__content,
+.m-modal__info {
+  position: absolute;
+  top     : 50%;
+  left    : 50%;
+
+
+  width  : 70%;
+  padding: 20px;
+
+  text-align: left;
+  font-size : 18px;
+
+  border    : 3px solid #333333;
+  background: #f1f1f1;
+  box-shadow: 0 10px 30px rgba(51, 51, 51, 0.4);
+  transform : translate(-50%, -50%);
+
+
+  animation-name    : animatetop;
+  animation-duration: 0.8s;
+
+}
+
+@-webkit-keyframes animatetop {
+  from {
+    top    : -300px;
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top    : -300px;
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+.m-close {
+  width      : 16px;
+  height     : 16px;
+  margin-left: auto;
+
+  display: block;
+
+  background     : url(data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjM2NXB0IiB2aWV3Qm94PSIwIDAgMzY1LjcxNzMzIDM2NSIgd2lkdGg9IjM2NXB0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9IiNmNDQzMzYiPjxwYXRoIGQ9Im0zNTYuMzM5ODQ0IDI5Ni4zNDc2NTYtMjg2LjYxMzI4Mi0yODYuNjEzMjgxYy0xMi41LTEyLjUtMzIuNzY1NjI0LTEyLjUtNDUuMjQ2MDkzIDBsLTE1LjEwNTQ2OSAxNS4wODIwMzFjLTEyLjUgMTIuNTAzOTA2LTEyLjUgMzIuNzY5NTMyIDAgNDUuMjVsMjg2LjYxMzI4MSAyODYuNjEzMjgyYzEyLjUwMzkwNyAxMi41IDMyLjc2OTUzMSAxMi41IDQ1LjI1IDBsMTUuMDgyMDMxLTE1LjA4MjAzMmMxMi41MjM0MzgtMTIuNDgwNDY4IDEyLjUyMzQzOC0zMi43NS4wMTk1MzItNDUuMjV6bTAgMCIvPjxwYXRoIGQ9Im0yOTUuOTg4MjgxIDkuNzM0Mzc1LTI4Ni42MTMyODEgMjg2LjYxMzI4MWMtMTIuNSAxMi41LTEyLjUgMzIuNzY5NTMyIDAgNDUuMjVsMTUuMDgyMDMxIDE1LjA4MjAzMmMxMi41MDM5MDcgMTIuNSAzMi43Njk1MzEgMTIuNSA0NS4yNSAwbDI4Ni42MzI4MTMtMjg2LjU5Mzc1YzEyLjUwMzkwNi0xMi41IDEyLjUwMzkwNi0zMi43NjU2MjYgMC00NS4yNDYwOTRsLTE1LjA4MjAzMi0xNS4wODIwMzJjLTEyLjUtMTIuNTIzNDM3LTMyLjc2NTYyNC0xMi41MjM0MzctNDUuMjY5NTMxLS4wMjM0Mzd6bTAgMCIvPjwvZz48L3N2Zz4=);
+  background-size: cover;
+  cursor         : pointer;
+
+  &:hover {
+    transition: all 400ms ease-out;
+    transform : rotate(360deg);
+  }
+}
+
+
+.m-title {
+  margin-bottom : 20px;
+  padding-bottom: 20px;
+
+  font-size     : 26px;
+  font-weight   : bold;
+  color         : black;
+  text-transform: uppercase;
+
+  border-bottom: 2px solid #333333;
+}
+
+.m-text {
+  margin-bottom: 20px;
+  font-size    : 16px;
+  color        : black;
+}
+
+.m-rule, .m-back {
+  max-width: 150px;
+  width    : 100%;
+  margin   : 0 auto 0 0;
+  padding  : 15px 0;
+
+  display: block;
+
+  text-align: center;
+
+  border    : 3px solid #333333;
+  background: #f1f1f1;
+
+  transition: all 150ms ease-out;
+  transform : translateY(0px);
+  cursor: pointer;
+
+  &:hover {
+
+    box-shadow: 9px 9px 0px 0px rgba(249, 235, 167, 1);
+  }
+
+  a {
+    font-size     : 18px;
+    text-transform: uppercase;
+    color         : black;
+  }
+}
+
+
+.m-modal__info {
+  display: none;
+
+}
